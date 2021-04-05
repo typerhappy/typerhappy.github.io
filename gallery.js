@@ -35,6 +35,8 @@ let loadPhoto = (currentPhoto) => {
     $('#main-image').attr('src', photos[currentPhoto].sourceOf);
     $('#photo-title').text(photos[currentPhoto].title);
     $('#photo-description').text(photos[currentPhoto].description);
+    let index = document.querySelector(`[data-number='${currentPhoto}']`)
+    $(index).addClass('thumbnail-clicked').siblings().removeClass('thumbnail-clicked');
 }
 
 loadPhoto(currentPhoto);
@@ -60,6 +62,7 @@ let loadThumbnail = (picture) => {
     $('.thumbnail:last-of-type').attr('src', picture.sourceOf);
     $('.thumbnail:last-of-type').attr("data-number", indexNum);
     indexNum++;
+   // $('#title').append(`<p  class='title'>${picture.title}</p>`)
     
 }
 
