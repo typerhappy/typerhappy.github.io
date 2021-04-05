@@ -54,4 +54,11 @@ $('#navi-bal').click(() => {
     }
 })
 
+let loadThumbnail =  (picture) => {
+    $('#thumbnails-container').append(`<img class='thumbnail'>`)
+    $('.thumbnail:last-of-type').attr('src', picture.photo)
+    console.log(picture.photo)
+}
+//css(
 
+photos.forEach(loadThumbnail)
