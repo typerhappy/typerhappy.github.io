@@ -1,0 +1,72 @@
+html {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(178,177,187,1) 100%);
+}
+
+img{
+    object-fit: fill;
+    width: 940px;
+     
+}
+
+.main {
+    
+    margin: 5% auto;
+    width: 1020px;
+    height: auto;
+    background-color: white;
+    box-shadow: 5px 5px 5px 1px grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+
+#navi-bal, #navi-jobb {
+    height: 30px;
+    width: 20px;
+    background-color: white;  
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#navi-jobb {
+    transform: rotate(0.5turn);
+    
+}
+
+#grey-container {
+    position: absolute;
+    align-self: flex-end;
+    width: 940px;
+    height: 90px;
+    background: rgba(255,255,255,0.2);
+   
+}
+
+.grey-box{
+    
+    color: white;
+    font-family: 'Oxygen', sans-serif;
+  
+}
+   #photo-description {
+        opacity: .8;
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+    #photo-title {
+        margin: 10px 0 0 15px;
+        padding: 0;
+        font-size: 25px;
+    }
+
+.no-select {
+            -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;          /* Likely future */     
+
+}
