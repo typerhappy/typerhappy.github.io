@@ -77,10 +77,21 @@ $('.thumbnail').click((event) => {
 
   // hover-re megjeleno ablakocskak letrehozasa
 
-  $('.thumbnail').hover((event) => {
-    let indexHovered = $(event.target).attr('data-number');
-    let indexHoverPhoto = parseInt(indexHovered);
-    $('#hover-title').text(`${photos[indexHoverPhoto].title}`);
+  
+  // $('.hover-title:last-of-type').text(`${picture.title}`);
+  
+  let showTitle = (picture) => {
+      $('.hover-title').css('opacity', '1')
+      $('.hover-title').text(`${picture.title}`);
+    }
 
-   // $('.hover-title:last-of-type').text(`${picture.title}`);
-  });
+    
+    
+   $('.thumbnail').hover((event) => {
+        let indexHovered = $(event.target).attr('data-number');
+        let indexHoverPhoto = parseInt(indexHovered);
+        console.log(indexHoverPhoto);
+        showTitle(photos[indexHoverPhoto]);
+    }, () => {
+        $('.hover-title').css('opacity','0')
+    });
