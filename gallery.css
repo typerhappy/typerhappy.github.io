@@ -74,13 +74,23 @@ img{
 
 }
 
-#thumbnails-container {
-    display: flex;
+#thumbnails-title-container {
     width: 400px;
     height: 60px;
     align-items: center;
-    margin: 1% auto;
+    margin: 0 auto;
     justify-content: space-evenly;
+    text-align: center;
+}
+
+#thumbnails-container {
+    width: 400px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    position: relative;
 }
 
 .thumbnail {
@@ -96,5 +106,30 @@ img{
 .thumbnail-clicked {
      box-shadow: 0px 5px 5px 1px rgb(61, 58, 58);
   }
+
+ /*.hover-title {
+     width: 5px;
+     height: 3px;
+     color: black;
+     font-size: 10px;
+     margin-top: -100px;
+ } */
+
+
+ #hover-title {
+     display: inline;
+     height: 12px;
+     margin: 0 auto;
+     color: white;
+     background-color: black;
+     text-align: center;
+  
+
+ }
+
+
+ /*#thumbnails-title-container:hover #hover-title {
+   display: none;
+ }*/
 
  

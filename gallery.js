@@ -58,12 +58,11 @@ $('#navi-bal').click(() => {
 let indexNum = 0;
 
 let loadThumbnail = (picture) => {
-    $('#thumbnails-container').append(`<img class='thumbnail' data-number=indexNum>`);
+    $('#thumbnails-container').append(`<img class='thumbnail'>`);
     $('.thumbnail:last-of-type').attr('src', picture.sourceOf);
     $('.thumbnail:last-of-type').attr("data-number", indexNum);
     indexNum++;
-   // $('#title').append(`<p  class='title'>${picture.title}</p>`)
-    
+
 }
 
 photos.forEach(loadThumbnail);
@@ -75,3 +74,13 @@ $('.thumbnail').click((event) => {
     let indexPhoto = parseInt(indexClicked);
     loadPhoto(indexPhoto)
   })
+
+  // hover-re megjeleno ablakocskak letrehozasa
+
+  $('.thumbnail').hover((event) => {
+    let indexHovered = $(event.target).attr('data-number');
+    let indexHoverPhoto = parseInt(indexHovered);
+    $('#hover-title').text(`${photos[indexHoverPhoto].title}`);
+
+   // $('.hover-title:last-of-type').text(`${picture.title}`);
+  });
