@@ -97,3 +97,19 @@ $('.thumbnail').click((event) => {
     }, () => {
         $('.hover-title').css('opacity','0')
     });
+
+    // arrows opacity changed on hover
+
+    $('#navi-jobb').hover(() => {
+        $('#navi-jobb').css('opacity', '.7')
+    }, () => {
+        $('#navi-jobb').css('opacity', '1')
+    }
+    );
+
+    $('#navi-bal').hover(() => {
+        $('#navi-bal').css('opacity', '.7')
+    }, () => {
+        $('#navi-bal').css('opacity', '1')
+    }
+    );
