@@ -43,16 +43,20 @@ loadPhoto(currentPhoto);
 
 $('#navi-jobb').click(() => {
     if (currentPhoto < photos.length - 1) {
-        currentPhoto++
-        loadPhoto(currentPhoto)
+        currentPhoto++;
+    } else {
+        currentPhoto = 0;
     }
+    loadPhoto(currentPhoto)
 })
 
 $('#navi-bal').click(() => {
     if (currentPhoto > 0) {
         currentPhoto--
-        loadPhoto(currentPhoto)
+    } else {
+        currentPhoto = photos.length - 1;
     }
+    loadPhoto(currentPhoto)
 })
 
 let indexNum = 0;
@@ -71,8 +75,8 @@ photos.forEach(loadThumbnail);
 
 $('.thumbnail').click((event) => {
     let indexClicked = $(event.target).attr('data-number');
-    let indexPhoto = parseInt(indexClicked);
-    loadPhoto(indexPhoto)
+    currentPhoto = parseInt(indexClicked);
+    loadPhoto(currentPhoto)
   })
 
   // hover-re megjeleno ablakocskak letrehozasa
@@ -85,7 +89,7 @@ $('.thumbnail').click((event) => {
       $('.hover-title').text(`${picture.title}`);
       let move = `${thumbnailPosition}` * 72;
      $('#hover-title').animate({'margin-left': `${move}`,'margin-right': `-=${move}`}, 1);
-      console.log(`${thumbnailPosition}`);
+      //console.log(`${thumbnailPosition}`);
     };
 
     
