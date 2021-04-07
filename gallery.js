@@ -81,9 +81,6 @@ $('.thumbnail').click((event) => {
 
   // hover-re megjeleno ablakocskak letrehozasa
 
-  
-  // $('.hover-title:last-of-type').text(`${picture.title}`);
-  
   let showTitle = function (picture, thumbnailPosition) {
       $('.hover-title').css('opacity', '1')
       $('.hover-title').text(`${picture.title}`);
@@ -91,13 +88,10 @@ $('.thumbnail').click((event) => {
      $('#hover-title').animate({'margin-left': `${move}`,'margin-right': `-=${move}`}, 1);
       //console.log(`${thumbnailPosition}`);
     };
-
-    
     
    $('.thumbnail').hover((event) => {
         let indexHovered = $(event.target).attr('data-number');
         let indexHoverPhoto = parseInt(indexHovered);
-        //console.log(indexHoverPhoto);
         showTitle(photos[indexHoverPhoto], indexHoverPhoto);
     }, () => {
         $('.hover-title').css('opacity','0')
