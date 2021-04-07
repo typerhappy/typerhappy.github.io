@@ -30,6 +30,17 @@ let photo5 = {
 
 let photos = [photo1, photo2, photo3, photo4, photo5]
 let currentPhoto = 0;
+let indexNum = 0;
+
+let loadThumbnail = (picture) => {
+    $('#thumbnails-container').append(`<img class='thumbnail'>`);
+    $('.thumbnail:last-of-type').attr('src', picture.sourceOf);
+    $('.thumbnail:last-of-type').attr("data-number", indexNum);
+    indexNum++;
+    
+}
+
+photos.forEach(loadThumbnail);
 
 let loadPhoto = (currentPhoto) => {
     $('#main-image').attr('src', photos[currentPhoto].sourceOf);
@@ -59,17 +70,7 @@ $('#navi-bal').click(() => {
     loadPhoto(currentPhoto)
 })
 
-let indexNum = 0;
 
-let loadThumbnail = (picture) => {
-    $('#thumbnails-container').append(`<img class='thumbnail'>`);
-    $('.thumbnail:last-of-type').attr('src', picture.sourceOf);
-    $('.thumbnail:last-of-type').attr("data-number", indexNum);
-    indexNum++;
-
-}
-
-photos.forEach(loadThumbnail);
 
 // thumbnail-re torteno kattintast implementalo fuggveny
 
